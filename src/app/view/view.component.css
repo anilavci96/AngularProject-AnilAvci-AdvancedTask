@@ -1,0 +1,27 @@
+.container {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  top: 0;
+  padding: 20px;
+  right: 0;
+  background-color: darkorange;
+}
+
+table {
+  margin-top: 14px;
+  padding: 14px;
+  font-size: x-large;
+  background-color: #154c79;
+  border-radius: 4px;
+}
+
+th {
+  font-weight: bold;
+}
+
+td {
+  border: solid;
+  text-align: center;
+  border: 2px solid black;
+}
