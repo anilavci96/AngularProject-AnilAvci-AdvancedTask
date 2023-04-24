@@ -32,36 +32,32 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class InputComponent {
   title = 'Input Container';
 
-  //this array keeps the data form the user
+  //Array to store the data from the user
   inputArray: { value: string, option: string }[] = [];
 
+  //Event Emitter to send the inputArray
   @Output() sendData = new EventEmitter<{ value: string, option: string }[]>();
-  private shouldEmit: boolean = true;
 
+  //Method to add a new input field, also stops emitting data
   addInputField() {
     this.stopEmitting();
     this.inputArray.push({ value: '', option: '' });
   }
 
+  //Method to delete last input field, also stops emitting data
   deleteInputField() {
     this.stopEmitting();
     this.inputArray.pop();
   }
 
-  submit(): void {
-    
-    console.log('Data from input: ', this.inputArray);
-    this.shouldEmit = true;
-    if (this.shouldEmit) {
-      //Emits the data
-      this.sendData.emit(this.inputArray);
-    }
+  submit(): void { 
+    //Emits the data
+    this.sendData.emit(this.inputArray);  
 
   }
 
   stopEmitting(): void {
-    this.shouldEmit = false;
-    //to stop emitting when pressed something other than submit button
+    //Emits nothing
     this.sendData.emit();
   }
 

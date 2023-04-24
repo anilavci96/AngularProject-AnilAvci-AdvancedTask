@@ -10,7 +10,7 @@ import { Component,Input } from '@angular/core';
       <th>Index</th>
       <th>Value</th>
     </tr>
-    <tr *ngFor="let data of viewInputData">
+    <tr *ngFor="let data of viewDataArray">
       <td>{{data.option}}</td>
       <td >{{data.value}}</td>     
     </tr>
@@ -25,8 +25,8 @@ import { Component,Input } from '@angular/core';
 export class ViewComponent {
   title = 'View Container';
 
-  //Comes form the parent app-component
-  @Input() viewInputData: { value: string, option: string }[] = []; 
+  //Comes from the parent app-component
+  @Input() viewDataArray: { value: string, option: string }[] = []; 
 
 }
 

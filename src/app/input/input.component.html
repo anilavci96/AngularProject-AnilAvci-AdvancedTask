@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="inputHeader">
+    <h1>{{title}}</h1>
+    <button (click)='addInputField()' class="add">+</button>
+    <button (click)='deleteInputField()' class="delete">-</button>
+    <button (click)='submit()' class="submit">Submit</button>
+  </div><!--inputHeader-->
+
+  <br />
+
+  <div *ngFor="let input of inputArray;" class="inputField">
+    <input [(ngModel)]="input.value" type="text">
+    <select [(ngModel)]="input.option" class="dropdown">
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </select>
+  </div><!--inputField-->
+
+</div><!--container-->

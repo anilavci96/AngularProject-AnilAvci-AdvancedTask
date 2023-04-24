@@ -3,20 +3,21 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-  <app-input (sendData)="addData($event)" > </app-input>
-  <app-view [viewInputData]="data"> </app-view>
+  <app-input (sendData)="setParentData($event)" > </app-input>
+  <app-view [viewDataArray]="parentData"> </app-view>
 ` ,
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'AngularProjectAnilAvciAdvanced';
 
-  //stores the data from the input component
-  data: { value: string, option: string }[] = [];
+  //Stores the data from the input component
+  public parentData: { value: string, option: string }[] = [];
 
-  //Emitter Event
-  addData(addedData: { value: string, option: string }[]) {
-    this.data = addedData;   
+  //Set the parentData using Emitter Event
+  setParentData(addedData: { value: string, option: string }[]) {
+    this.parentData = addedData;   
   }
 }
 
